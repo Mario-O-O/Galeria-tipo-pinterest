@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<!-- http://meridadesignblog.com/como-crear-plugin-para-galerias-estilo-pinterest-con-javascript/ -->
+
+<body>
+    <div class="cards">
+        <div class="card">
+            <div class="card-image">
+                <img src="https://s-media-cache-ak0.pinimg.com/564x/65/33/85/6533859c383845b498d81990c4be2a41.jpg" />
+            </div>
+            <div class="card-info">
+                Low-poly illustrations
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image">
+                <img src="https://s-media-cache-ak0.pinimg.com/564x/19/dc/3d/19dc3d3f392a57378c55c32e3ef7574e.jpg" />
+            </div>
+            <div class="card-info">
+                Burger Bits by cronobreaker.devi... on @deviantART
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image">
+                <img src="https://s-media-cache-ak0.pinimg.com/564x/5c/dd/72/5cdd72b452abf457e85ec9ea38aa6559.jpg" />
+            </div>
+            <div class="card-info">
+                Da' Monk Photo by Mnk Crew
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image">
+                <img src="https://s-media-cache-ak0.pinimg.com/564x/89/df/1c/89df1ceeb79793465779a273794faa10.jpg" />
+            </div>
+            <div class="card-info">
+                vector animals
+                <br> Photo by Çetin Can Karaduman on Behance
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image">
+                <img src="https://s-media-cache-ak0.pinimg.com/564x/f8/e7/bf/f8e7bfc4e7523e1d050fd12e2141eb48.jpg" />
+            </div>
+            <div class="card-info">
+                Diet Zombie Pop by cronobreaker.devi... on @deviantART
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image">
+                <img src="https://s-media-cache-ak0.pinimg.com/564x/0a/ec/7b/0aec7ba66f3970edbeed34168ea7e776.jpg" />
+            </div>
+            <div class="card-info">
+                Vectors Assemble
+                <br> Photo by William Teal on Behance
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image">
+                <img src="https://s-media-cache-ak0.pinimg.com/564x/8f/de/a6/8fdea6e709e1dbf66aa5f031c0e187fc.jpg" />
+            </div>
+            <div class="card-info">
+                Camila 2 - Urban Arts by Cristiano
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image">
+                <img src="https://s-media-cache-ak0.pinimg.com/564x/c2/7f/4c/c27f4ce431471238a8ac08de609a3e24.jpg" />
+            </div>
+            <div class="card-info">
+                BMO v2.0 by shoden23.devianta... on @deviantART
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image">
+                <img src="https://s-media-cache-ak0.pinimg.com/564x/2a/04/0f/2a040f6fd57319510e6c7a027795cb1d.jpg" />
+            </div>
+            <div class="card-info">
+                FORCE AWAKENS DEADPOOL-vector
+                <br> Photo by Orlando Arocena on Behance
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image">
+                <img src="https://s-media-cache-ak0.pinimg.com/564x/e7/66/c2/e766c2d243ed4b6962d71ba8b48ffddf.jpg" />
+            </div>
+            <div class="card-info">
+                Breaking Bad by Guillaume
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image">
+                <img src="https://scontent.fbog3-1.fna.fbcdn.net/v/t31.0-8/21743490_10212698289908790_7982299727132143890_o.jpg?_nc_cat=105&_nc_ohc=-v_hSJwtAzwAX9v_sQg&_nc_ht=scontent.fbog3-1.fna&oh=c48b2ab4b90b839b0c9c122dbd73af5e&oe=5ED9AE6E" />
+            </div>
+            <div class="card-info">
+                Mia
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image">
+                <img src="https://scontent.fbog3-1.fna.fbcdn.net/v/t1.0-9/s960x960/75233707_10218673456964232_1316563520975798272_o.jpg?_nc_cat=109&_nc_ohc=5D-ZCIhWmVAAX_zPsPz&_nc_ht=scontent.fbog3-1.fna&oh=b5e1dfe6cbe532b451947672306df2e1&oe=5E903B84" />
+            </div>
+            <div class="card-info">
+                Otra Mia
+            </div>
+        </div>
+    </div>
+    <button id="load-more-comments">Load More</button>
+    <h1>Texto ejemplo</h1>
+
+
+    <script src="scriptsGaleria.js"></script>
+    <script type="text/javascript">
+        (function() {
+            'use strict';
+
+            var grid = new galeriaGrid({
+                container: '.cards',
+                item: '.card',
+                gutter: 30,
+                delay: 200
+            });
+
+            window.addEventListener('resize', function() {
+                grid.init();
+            });
+
+            loadMoreBtn.addEventListener('click', function(){
+                grid.init();
+            });
+
+            Array.from(document.querySelectorAll('.card img')).forEach(function(item) {
+                item.addEventListener('load', function() {
+                    grid.init();
+                    // item.removeEventListener('load');
+                }, false);
+            });
+
+        }());
+    </script>
+</body>
+
+</html>
